@@ -61,7 +61,7 @@ def train(args):
     ndf = 64
     ngf = 64
     nz = 256
-    nlr = 0.0002
+    nlr = args.nlr
     nbeta1 = 0.5
     use_cuda = True
     multi_gpu = True
@@ -191,6 +191,7 @@ if __name__ == "__main__":
     parser.add_argument('--cuda', type=int, default=0, help='index of gpu to use')
     parser.add_argument('--name', type=str, default='test1', help='experiment name')
     parser.add_argument('--iter', type=int, default=50000, help='number of iterations')
+    parser.add_argument('--nlr', type=int, default=0.0002, help='learning rate')
     parser.add_argument('--start_iter', type=int, default=0, help='the iteration to start training')
     parser.add_argument('--batch_size', type=int, default=8, help='mini batch number of images')
     parser.add_argument('--im_size', type=int, default=1024, help='image resolution')
